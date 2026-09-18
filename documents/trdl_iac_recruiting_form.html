@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRDL-IAC FORM RF-01: RESEARCH FELLOWSHIP &amp; SCIENTIFIC RECRUITING PORTAL</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../assets/html2pdf.bundle.min.js"></script>
+  <style>
+    /* RESET & THEME */
+    body {
+      background: #000000;
+      color: #F5F5DC;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 0;
+    }
+    .portal-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem 1.5rem;
+    }
+    .action-docket {
+      background: #111111;
+      border: 1px solid #333333;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .docket-label {
+      font-size: 0.85rem;
+      color: #888888;
+      letter-spacing: 0.05em;
+    }
+    .docket-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #FFFFFF;
+      letter-spacing: 0.06em;
+      margin-top: 0.2rem;
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .action-btn {
+      background: #000000;
+      color: #F5F5DC;
+      border: 1px solid #F5F5DC;
+      padding: 0.5rem 1rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.15s ease;
+    }
+    .action-btn:hover {
+      background: #F5F5DC;
+      color: #000000;
+    }
+    .action-btn.primary {
+      background: #F5F5DC;
+      color: #000000;
+    }
+    .action-btn.primary:hover {
+      background: #FFFFFF;
+      color: #000000;
+      border-color: #FFFFFF;
+    }
+    .form-card {
+      background: #0A0A0A;
+      border: 1px solid #262626;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .form-header-bar {
+      border-bottom: 2px solid #F5F5DC;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .form-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: 0.06em;
+      color: #FFFFFF;
+      margin: 0.4rem 0 0.2rem 0;
+    }
+    .form-subtitle {
+      font-size: 0.85rem;
+      color: #AAAAAA;
+    }
+    .directive-box {
+      border: 1px solid #444444;
+      background: #111111;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: #CCCCCC;
+    }
+    .portal-section-title {
+      background: #1A1A1A;
+      color: #FFFFFF;
+      border-left: 4px solid #F5F5DC;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.95rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .portal-section-desc {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #888888;
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+    }
+    .input-group {
+      margin-bottom: 1.25rem;
+      padding-left: 0.5rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: bold;
+      color: #F5F5DC;
+      margin-bottom: 0.3rem;
+    }
+    .input-help {
+      font-size: 0.78rem;
+      color: #888888;
+      margin-bottom: 0.4rem;
+    }
+    .portal-input, .portal-textarea, .portal-select {
+      width: 100%;
+      background: #000000;
+      color: #F5F5DC;
+      border: 1px solid #444444;
+      padding: 0.6rem 0.8rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .portal-input:focus, .portal-textarea:focus, .portal-select:focus {
+      border-color: #F5F5DC;
+      background: #050505;
+    }
+    .portal-textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+    .photo-upload-container {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .photo-preview-box {
+      width: 120px;
+      height: 145px;
+      border: 2px dashed #666666;
+      background: #050505;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .photo-preview-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .photo-placeholder-text {
+      font-size: 0.7rem;
+      color: #666666;
+      text-align: center;
+      padding: 0.5rem;
+    }
+    .file-input-wrapper {
+      flex: 1;
+      min-width: 260px;
+    }
+    .custom-file-btn {
+      display: inline-block;
+      background: #1A1A1A;
+      border: 1px solid #555555;
+      color: #F5F5DC;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .custom-file-btn:hover {
+      background: #262626;
+      border-color: #F5F5DC;
+    }
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+    }
+    .choice-item {
+      background: #111111;
+      border: 1px solid #333333;
+      padding: 0.5rem 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      font-size: 0.82rem;
+      transition: all 0.15s ease;
+    }
+    .choice-item:hover {
+      border-color: #777777;
+      background: #161616;
+    }
+    .choice-item input[type="radio"], .choice-item input[type="checkbox"] {
+      accent-color: #F5F5DC;
+      cursor: pointer;
+    }
+    .sign-table-portal {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .sign-table-portal td {
+      border: 1px solid #333333;
+      padding: 0.8rem;
+      vertical-align: top;
+    }
+
+    /* ==========================================================================
+       OFFICIAL PRINTABLE DOSSIER (Rendered into PDF / Print View)
+       ========================================================================== */
+    #printable-dossier {
+      display: none;
+      background: #FFFFFF;
+      color: #000000;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 8.5pt;
+      line-height: 1.3;
+    }
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 12mm 10mm 12mm;
+      }
+      body {
+        background: #FFFFFF !important;
+        color: #000000 !important;
+      }
+      .portal-container {
+        display: none !important;
+      }
+      #printable-dossier {
+        display: block !important;
+      }
+      .print-page {
+        width: 100%;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .print-page-break {
+        page-break-before: always !important;
+        break-before: page !important;
+      }
+      .print-header-table {
+        width: 100%;
+        border-bottom: 2px solid #000000;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+        break-inside: avoid !important;
+      }
+      .print-doc-ref {
+        font-size: 7.5pt;
+        font-weight: bold;
+        letter-spacing: 0.08em;
+        color: #555555;
+      }
+      .print-main-heading {
+        font-size: 11.5pt;
+        font-weight: bold;
+        letter-spacing: 0.04em;
+        margin-top: 3px;
+        margin-bottom: 2px;
+      }
+      .print-sub-heading {
+        font-size: 8pt;
+        color: #222222;
+      }
+      .print-mandate-box {
+        border: 1px solid #000000;
+        padding: 6px 8px;
+        margin-bottom: 8px;
+        font-size: 7.5pt;
+        background: #F9F9F9;
+        line-height: 1.25;
+        break-inside: avoid !important;
+      }
+      .print-section-title {
+        font-size: 8.5pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        background: #000000;
+        color: #FFFFFF;
+        padding: 3px 6px;
+        margin-top: 8px;
+        margin-bottom: 4px;
+        break-inside: avoid !important;
+        break-after: avoid !important;
+      }
+      .print-section-desc {
+        font-size: 7.5pt;
+        font-style: italic;
+        color: #444444;
+        margin-bottom: 5px;
+        padding-left: 2px;
+      }
+      .print-q-block {
+        margin-bottom: 6px;
+        padding-left: 2px;
+        break-inside: avoid !important;
+      }
+      .print-q-title {
+        font-weight: bold;
+        font-size: 8pt;
+        margin-bottom: 2px;
+      }
+      .print-q-prompt {
+        font-size: 7.5pt;
+        color: #222222;
+        margin-bottom: 3px;
+      }
+      .print-filled-val {
+        border: 1px solid #000000;
+        background: #FDFDFD;
+        padding: 4px 6px;
+        font-size: 8pt;
+        font-weight: bold;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        min-height: 18px;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+      }
+      .print-sign-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 6px;
+        break-inside: avoid !important;
+      }
+      .print-sign-table td {
+        border: 1px solid #000000;
+        padding: 6px 8px;
+        vertical-align: top;
+        font-size: 7.5pt;
+        break-inside: avoid !important;
+      }
+      .print-footer-bar {
+        margin-top: 8px;
+        border-top: 1px solid #777777;
+        padding-top: 4px;
+        font-size: 7pt;
+        color: #666666;
+        display: flex;
+        justify-content: space-between;
+        break-inside: avoid !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- INTERACTIVE WEB APPLICATION PORTAL CONTAINER -->
+  <div class="portal-container">
+
+    <!-- ACTION DOCKET / DOWNLOADS -->
+    <div class="action-docket">
+      <div>
+        <div class="docket-label">STATUTORY INTAKE DOCKET // DIRECT ONLINE FILING:</div>
+        <div class="docket-title">TRDL-IAC FORM RF-01: RESEARCH FELLOWSHIP DOSSIER</div>
+      </div>
+      <div class="btn-group">
+        <a href="trdl_iac_recruiting_form.pdf" class="action-btn" download>
+          DOWNLOAD SAMPLE WATERMARKED PDF
+        </a>
+        <button type="button" class="action-btn primary" onclick="generateAndPrint()">
+          PRINT / SAVE AS PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- FORM ENTRY CARD -->
+    <form id="fellowshipForm" onsubmit="event.preventDefault(); generateAndPrint();" class="form-card">
+
+      <div class="form-header-bar">
+        <div>
+          <div style="background: #000000; padding: 4px 8px; display: inline-block; border: 1px solid #333333; margin-bottom: 0.5rem;">
+            <img src="../assets/iac_logo.png" alt="IAC LOGO" style="height: 32px; width: auto; display: block;">
+          </div>
+          <div class="form-title">TEWARY RESEARCH AND DEVELOPMENT LAB (TRDL) // IAC</div>
+          <div class="form-subtitle">Advanced Research Fellowship, Resident Scientist &amp; Hardware/Biophysical Engineering Intake</div>
+        </div>
+        <div style="text-align: right;">
+          <div class="docket-label">DOCUMENT: RF-FORM-01</div>
+          <div class="docket-label">INTAKE REGISTRY: 2026</div>
+          <div class="docket-label" style="color: #4CAF50; margin-top: 0.2rem;">ONLINE INTAKE ACTIVE</div>
+        </div>
+      </div>
+
+      <div class="directive-box">
+        <strong>MANDATORY PRE-SCREENING SCIENTIFIC DIRECTIVE:</strong><br>
+        TRDL and IAC maintain uncompromising standards of theoretical rigour, mathematical consistency, and physical execution. Applications from prompt engineers, buzzword aggregators, or derivative software wrappers will be rejected ab initio without notification. Candidates are evaluated strictly on first-principles physics (Information Disturbance Materialization / Stability Geometry), mathematical foundations, low-level systems engineering (C, Rust, Verilog RTL), or empirical biochemistry.
+      </div>
+
+      <!-- SECTION 1 -->
+      <div class="portal-section-title">Section 1: Candidate Identity &amp; Research Track</div>
+      <div class="portal-section-desc">Credentials, academic heritage, photograph, and target research division.</div>
+
+      <div class="input-group">
+        <label class="input-label" for="applicant_name">1. Full Legal Name &amp; Academic/Institutional Affiliation *</label>
+        <div class="input-help">Include full legal name, current university, department, degree program, or research lab:</div>
+        <input type="text" id="applicant_name" class="portal-input" placeholder="e.g., Dr. Jane Doe // Department of Physics, IISc Bangalore" required>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">Candidate Identification Photograph (Passport / Portrait Photo)</label>
+        <div class="input-help">Upload high-contrast portrait photo (JPEG/PNG). Embeds directly into your official statutory dossier:</div>
+        <div class="photo-upload-container">
+          <div class="photo-preview-box" id="photoPreviewContainer">
+            <img id="photoPreview" alt="Applicant Photo">
+            <div class="photo-placeholder-text" id="photoPlaceholder">NO PHOTO<br>ATTACHED</div>
+          </div>
+          <div class="file-input-wrapper">
+            <label class="custom-file-btn" for="photo_input">SELECT CANDIDATE PHOTO FILE</label>
+            <input type="file" id="photo_input" accept="image/*" style="display: none;" onchange="handlePhotoUpload(this)">
+            <div style="font-size: 0.75rem; color: #888888; line-height: 1.4;">
+              Image is encoded and embedded locally. It will appear on Page 1 of your official executed dossier.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">2. Primary Target Directorate *</label>
+        <div class="input-help">Select the primary research division you are petitioning to join:</div>
+        <div class="choice-grid">
+          <label class="choice-item">
+            <input type="radio" name="directorate" value="COMPUTATIONAL DIRECTORATES (01-10): Silicon, Soliton Computing, Stability Geometry, VORASHI, DSTPU" checked>
+            <span>Directorates 01-10: Next-Gen Silicon &amp; Computational Physics</span>
+          </label>
+          <label class="choice-item">
+            <input type="radio" name="directorate" value="MOLECULAR BIOTHERAPEUTICS (DEPT 11): Cold-chain vitrification, thermostable enzymes, stabilization matrices">
+            <span>DEPT 11: Molecular Biotherapeutics &amp; Matrices</span>
+          </label>
+          <label class="choice-item">
+            <input type="radio" name="directorate" value="GENOME EDITING &amp; RNA MEDICINE (DEPT 12): High-fidelity Cas9, circRNA shields, Waddington iPSC reprogramming">
+            <span>DEPT 12: Genome Editing &amp; RNA Therapeutics</span>
+          </label>
+          <label class="choice-item">
+            <input type="radio" name="directorate" value="SYNTHETIC BIOLOGY &amp; BIO-COMPUTING (DEPT 13): Multicellular logic gates, damped oscillators, Ricci microfluidics">
+            <span>DEPT 13: Synthetic Biology &amp; Bio-Computing</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label" for="repo_urls">3. Public Code &amp; Experimental Repositories</label>
+        <div class="input-help">Provide URLs to verifiable GitHub repositories, preprints, or laboratory notebooks:</div>
+        <input type="text" id="repo_urls" class="portal-input" placeholder="e.g., https://github.com/username/quantum-kernel, arXiv:2401.xxxx">
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="portal-section-title">Section 2: Mathematical Rigour &amp; First-Principles Competency</div>
+      <div class="portal-section-desc">Foundational understanding of information theory, physical stability, and non-trivial algorithms.</div>
+
+      <div class="input-group">
+        <label class="input-label" for="stability_answer">4. Stability Geometry &amp; Information Disturbance Formulation *</label>
+        <div class="input-help">Explain your understanding of how Fisher Information Metrics and manifold curvature prevent catastrophic forgetting or molecular denaturation:</div>
+        <textarea id="stability_answer" class="portal-textarea" placeholder="Formulate from differential geometry or statistical physics principles..." required></textarea>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label" for="artifact_answer">5. Primary Technical Artifact Demonstration *</label>
+        <div class="input-help">Describe the most complex algorithm, circuit architecture, or wet-lab protocol you designed and executed from scratch:</div>
+        <textarea id="artifact_answer" class="portal-textarea" placeholder="Detail the mathematical formulation, hardware synthesis, or biochemical parameters..." required></textarea>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">6. Core Technical Toolchain Mastery (Check all verified proficiencies)</label>
+        <div class="choice-grid">
+          <label class="choice-item">
+            <input type="checkbox" name="toolchain" value="C / Rust / Low-Level Kernel Systems">
+            <span>C / Rust / Low-Level Kernel Systems</span>
+          </label>
+          <label class="choice-item">
+            <input type="checkbox" name="toolchain" value="Verilog / Chisel RTL Silicon Synthesis">
+            <span>Verilog / Chisel RTL Silicon Synthesis</span>
+          </label>
+          <label class="choice-item">
+            <input type="checkbox" name="toolchain" value="GROMACS / OpenMM / Molecular Dynamics">
+            <span>GROMACS / OpenMM / Molecular Dynamics</span>
+          </label>
+          <label class="choice-item">
+            <input type="checkbox" name="toolchain" value="Recombinant Wet-Lab Protein Expression / SDS-PAGE">
+            <span>Recombinant Wet-Lab Protein Expression</span>
+          </label>
+          <label class="choice-item">
+            <input type="checkbox" name="toolchain" value="PyTorch / GIOS / Custom Autograd Engines">
+            <span>PyTorch / GIOS / Custom Autograd Engines</span>
+          </label>
+          <label class="choice-item">
+            <input type="checkbox" name="toolchain" value="Microfluidic Design / Soft Lithography">
+            <span>Microfluidic Design / Soft Lithography</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="portal-section-title">Section 3: Intellectual Property &amp; Non-Disclosure Covenants</div>
+      <div class="portal-section-desc">Sovereign intellectual property ownership, confidentiality, and closed-capital integrity.</div>
+
+      <div class="input-group">
+        <label class="input-label">7. Exclusive IP Assignment to TRDL *</label>
+        <div class="input-help">All models, theorems, circuits, and biological formulations created under TRDL/IAC shall permanently vest in TRDL sovereign custody:</div>
+        <div class="choice-grid">
+          <label class="choice-item">
+            <input type="radio" name="ip_assign" value="YES, UNCONDITIONALLY CERTIFIED" checked>
+            <span>YES, UNCONDITIONALLY CERTIFIED</span>
+          </label>
+          <label class="choice-item">
+            <input type="radio" name="ip_assign" value="NO (AUTOMATIC DISQUALIFICATION)">
+            <span>NO (AUTOMATIC DISQUALIFICATION)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">8. Strict Non-Disclosure &amp; Information Walls *</label>
+        <div class="input-help">Warrant free of encumbrance/non-compete, consenting to pre-publication review:</div>
+        <div class="choice-grid">
+          <label class="choice-item">
+            <input type="radio" name="nda_warrant" value="YES, CERTIFIED AND FREE OF ENCUMBRANCE" checked>
+            <span>YES, CERTIFIED AND FREE OF ENCUMBRANCE</span>
+          </label>
+          <label class="choice-item">
+            <input type="radio" name="nda_warrant" value="NO (DISQUALIFIED)">
+            <span>NO (DISQUALIFIED)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">9. Closed-Capital Mandate *</label>
+        <div class="input-help">Acknowledge TRDL operates strictly under sovereign mandates, rejecting VC hype cycles:</div>
+        <label class="choice-item" style="max-width: 380px;">
+          <input type="checkbox" id="capital_ack" required checked>
+          <span>YES, CLOSED-CAPITAL MANDATE ACKNOWLEDGED</span>
+        </label>
+      </div>
+
+      <!-- SECTION 4 -->
+      <div class="portal-section-title">Section 4: Operational Availability &amp; Laboratory Deployment</div>
+      <div class="portal-section-desc">Appointment structure, physical location, and research bandwidth.</div>
+
+      <div class="input-group">
+        <label class="input-label">10. Proposed Appointment Classification *</label>
+        <div class="choice-grid">
+          <label class="choice-item">
+            <input type="radio" name="appointment" value="Resident Research Fellow (Full-Time, New Delhi / Shoolini Lab Cohort)" checked>
+            <span>Resident Research Fellow (Full-Time, Lab Cohort)</span>
+          </label>
+          <label class="choice-item">
+            <input type="radio" name="appointment" value="Remote Contributing Scholar (Dedicated Mathematical or In Silico Research)">
+            <span>Remote Contributing Scholar (In Silico / Theory)</span>
+          </label>
+          <label class="choice-item">
+            <input type="radio" name="appointment" value="Undergraduate / Graduate Research Intern (Direct Mentorship Track)">
+            <span>Undergraduate / Graduate Research Intern</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label" for="time_commitment">11. Expected Time Commitment &amp; Earliest Start Date *</label>
+        <input type="text" id="time_commitment" class="portal-input" placeholder="e.g., 45 hours/week, Earliest Start: 1st October 2026" required>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label" for="referees">12. Academic or Technical Referees *</label>
+        <div class="input-help">List two academic advisors, PIs, or senior engineers who can attest to your technical integrity:</div>
+        <textarea id="referees" class="portal-textarea" placeholder="Name, Title, Institution, Email / Phone..." required></textarea>
+      </div>
+
+      <!-- MANDATORY ATTESTATION & SIGNATURE -->
+      <div class="portal-section-title">Mandatory Applicant Attestation &amp; Signature</div>
+      <div class="portal-section-desc">Binding legal declaration of credentials and original scientific execution.</div>
+
+      <table class="sign-table-portal">
+        <tr>
+          <td style="width: 50%;">
+            <label class="input-label" for="sig_name">Applicant Full Legal Name *</label>
+            <input type="text" id="sig_name" class="portal-input" placeholder="Full legal name" required oninput="syncSigName(this.value)">
+          </td>
+          <td style="width: 50%;">
+            <label class="input-label" for="gov_id">Government ID / Passport No. *</label>
+            <input type="text" id="gov_id" class="portal-input" placeholder="Passport / National ID" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="input-label" for="applicant_email">Primary Email &amp; PGP Key ID *</label>
+            <input type="text" id="applicant_email" class="portal-input" placeholder="name@institution.edu // Key ID" required>
+          </td>
+          <td>
+            <label class="input-label" for="app_date">Date of Application *</label>
+            <input type="text" id="app_date" class="portal-input" required>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <label class="input-label" for="digital_sig">Official Applicant Digital Signature *</label>
+            <div class="input-help">Type your full legal name as digital execution of this statutory dossier:</div>
+            <input type="text" id="digital_sig" class="portal-input" style="font-size: 1.1rem; font-style: italic; letter-spacing: 0.1em; color: #FFFFFF;" placeholder="/s/ Full Legal Name" required>
+          </td>
+        </tr>
+      </table>
+
+      <!-- SUBMIT / DOWNLOAD CONTROLS -->
+      <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <a href="trdl_iac_recruiting_form.pdf" class="action-btn" download>
+          DOWNLOAD SAMPLE WATERMARKED PDF
+        </a>
+        <button type="submit" class="action-btn primary">
+          PRINT / SAVE EXECUTED DOSSIER (PDF)
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+
+  <!-- ==========================================================================
+       HIDDEN PRINTABLE DOSSIER (2-PAGE A4 TARGET)
+       ========================================================================== -->
+  <div id="printable-dossier">
+
+    <!-- PAGE 1 -->
+    <div class="print-page" id="print-p1">
+      <div class="print-header-table">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <div style="background: #000000; padding: 3px 6px; display: inline-block;">
+            <img src="data:image/png;base64,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" alt="IAC LOGO" style="height: 28px; width: auto; display: block;">
+          </div>
+          <div style="text-align: right;">
+            <div class="print-doc-ref">DOCUMENT DESIGNATION: RF-FORM-01</div>
+            <div class="print-doc-ref">SCIENTIFIC &amp; ENGINEERING RECRUITING ARCHIVE</div>
+          </div>
+        </div>
+        <div class="print-main-heading">TEWARY RESEARCH AND DEVELOPMENT LAB (TRDL) // IAC</div>
+        <div class="print-sub-heading">Advanced Research Fellowship, Resident Scientist &amp; Hardware/Biophysical Engineering Intake</div>
+        <div class="print-doc-ref" style="margin-top: 2px;">JURISDICTION: NEW DELHI, INDIA | INTAKE REGISTRY REF: TRDL-REC-FELLOW-2026</div>
+      </div>
+
+      <div class="print-mandate-box">
+        <strong>MANDATORY PRE-SCREENING SCIENTIFIC DIRECTIVE:</strong><br>
+        TRDL and IAC maintain uncompromising standards of theoretical rigour, mathematical consistency, and physical execution. Applications from prompt engineers, buzzword-driven narrative aggregators, or derivative software wrappers will be rejected ab initio without notification. Candidates are evaluated strictly on first-principles physics (Information Disturbance Materialization / Stability Geometry), mathematical foundations (Lie groups, differential geometry, Fisher tensors), low-level systems engineering (C, Rust, Verilog RTL), or empirical wet-lab biochemistry. Execution of this dossier warrants all disclosures are factual, verifiable, and free of encumbrance.
+      </div>
+
+      <!-- SECTION 1 -->
+      <div class="print-section-title">Section 1: Candidate Identity &amp; Research Track</div>
+      <div class="print-section-desc">Identifies candidate credentials, academic heritage, and target research directorate.</div>
+
+      <div style="display: flex; justify-content: space-between; gap: 12px; margin-bottom: 4px;">
+        <div style="flex: 1;">
+          <div class="print-q-block">
+            <div class="print-q-title">1. Full Legal Name and Institutional / Academic Affiliation:</div>
+            <div class="print-filled-val" id="p_name">--</div>
+          </div>
+          <div class="print-q-block">
+            <div class="print-q-title">2. Primary Target Directorate:</div>
+            <div class="print-filled-val" id="p_dept">--</div>
+          </div>
+          <div class="print-q-block">
+            <div class="print-q-title">3. Public Code &amp; Experimental Repositories:</div>
+            <div class="print-filled-val" id="p_repos">--</div>
+          </div>
+        </div>
+        <div style="width: 85px; text-align: center;">
+          <div style="border: 1px solid #000000; width: 85px; height: 105px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #FAFAFA;">
+            <img id="p_photo" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+            <span id="p_photo_none" style="font-size: 6.5pt; color: #777777;">AFFIXED<br>PORTRAIT</span>
+          </div>
+          <div style="font-size: 6pt; color: #555555; margin-top: 2px;">CANDIDATE ID</div>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="print-section-title">Section 2: Mathematical Rigour &amp; First-Principles Competency</div>
+      <div class="print-section-desc">Measures foundational understanding of information theory, physical stability, and non-trivial algorithms.</div>
+
+      <div class="print-q-block">
+        <div class="print-q-title">4. Stability Geometry &amp; Information Disturbance Formulation:</div>
+        <div class="print-filled-val" id="p_stability" style="min-height: 28px;">--</div>
+      </div>
+
+      <div class="print-q-block">
+        <div class="print-q-title">5. Primary Technical Artifact Demonstration:</div>
+        <div class="print-filled-val" id="p_artifact" style="min-height: 28px;">--</div>
+      </div>
+
+      <div class="print-q-block">
+        <div class="print-q-title">6. Core Technical Toolchain Mastery:</div>
+        <div class="print-filled-val" id="p_toolchains">--</div>
+      </div>
+
+      <div class="print-footer-bar">
+        <span>TRDL-IAC FORM RF-01 // SCIENTIFIC RECRUITING DOSSIER</span>
+        <span>PAGE 1 OF 2</span>
+      </div>
+    </div>
+
+    <!-- CLEAN PAGE BREAK -->
+    <div class="print-page-break"></div>
+
+    <!-- PAGE 2 -->
+    <div class="print-page" id="print-p2">
+      <div class="print-header-table" style="margin-bottom: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div class="print-main-heading" style="margin: 0; font-size: 10pt;">TRDL // IAC // FORM RF-01 RECRUITING DOSSIER CONTINUATION</div>
+          <div class="print-doc-ref">PAGE 2 OF 2</div>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="print-section-title">Section 3: Intellectual Property &amp; Non-Disclosure Covenants</div>
+      <div class="print-section-desc">Enforces TRDL sovereign intellectual property ownership, confidentiality, and closed-capital integrity.</div>
+
+      <div class="print-q-block">
+        <div class="print-q-title">7. Exclusive IP Assignment to TRDL:</div>
+        <div class="print-filled-val" id="p_ip">--</div>
+      </div>
+
+      <div class="print-q-block">
+        <div class="print-q-title">8. Strict Non-Disclosure &amp; Information Walls:</div>
+        <div class="print-filled-val" id="p_nda">--</div>
+      </div>
+
+      <div class="print-q-block">
+        <div class="print-q-title">9. Closed-Capital Commitment:</div>
+        <div class="print-filled-val" id="p_capital">YES, SOVEREIGN CLOSED-CAPITAL MANDATE ACKNOWLEDGED</div>
+      </div>
+
+      <!-- SECTION 4 -->
+      <div class="print-section-title">Section 4: Operational Availability &amp; Laboratory Deployment</div>
+      <div class="print-section-desc">Specifies appointment structure, physical location, and research bandwidth.</div>
+
+      <div class="print-q-block">
+        <div class="print-q-title">10. Proposed Appointment Classification:</div>
+        <div class="print-filled-val" id="p_appointment">--</div>
+      </div>
+
+      <div class="print-q-block">
+        <div class="print-q-title">11. Expected Time Commitment &amp; Start Date:</div>
+        <div class="print-filled-val" id="p_time">--</div>
+      </div>
+
+      <div class="print-q-block">
+        <div class="print-q-title">12. Academic or Technical Referees:</div>
+        <div class="print-filled-val" id="p_referees" style="min-height: 28px;">--</div>
+      </div>
+
+      <!-- APPLICANT ATTESTATION & EXECUTION BLOCK -->
+      <div class="print-section-title">Mandatory Applicant Attestation &amp; Signature</div>
+      <p style="font-size: 7.2pt; margin-top: 3px; margin-bottom: 4px; line-height: 1.25;">
+        I hereby solemnly declare that all statements, technical descriptions, and credentials provided in this application are authentic, truthful, and free of misrepresentation. I acknowledge that any falsification of code contributions, academic credentials, or experimental data will result in immediate disqualification and permanent blacklisting across TRDL and IAC registries.
+      </p>
+
+      <table class="print-sign-table">
+        <tr>
+          <td style="width: 50%;">
+            <strong>APPLICANT FULL LEGAL NAME:</strong><br>
+            <span id="p_sig_name_display" style="font-size: 8.5pt; font-weight: bold;">--</span>
+          </td>
+          <td style="width: 50%;">
+            <strong>GOVERNMENT ID / PASSPORT NO.:</strong><br>
+            <span id="p_gov_id_display" style="font-size: 8.5pt; font-weight: bold;">--</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>PRIMARY EMAIL &amp; PGP KEY ID:</strong><br>
+            <span id="p_email_display" style="font-size: 8.5pt; font-weight: bold;">--</span>
+          </td>
+          <td>
+            <strong>DATE OF APPLICATION:</strong><br>
+            <span id="p_date_display" style="font-size: 8.5pt; font-weight: bold;">--</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="height: 38px;">
+            <strong>OFFICIAL APPLICANT SIGNATURE:</strong><br>
+            <span id="p_sig_display" style="font-size: 10pt; font-style: italic; font-weight: bold; letter-spacing: 0.08em;">--</span>
+          </td>
+        </tr>
+      </table>
+
+      <div class="print-footer-bar">
+        <span>SUBMISSION: Transmit signed PDF dossier with code repo/notebooks to TRDL Office of Scientific Appointments.</span>
+        <span>PAGE 2 OF 2</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // AUTO-FILL CURRENT DATE
+    window.addEventListener('DOMContentLoaded', () => {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('app_date').value = today;
+    });
+
+    let uploadedPhotoDataUrl = null;
+
+    function handlePhotoUpload(input) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          uploadedPhotoDataUrl = e.target.result;
+          const preview = document.getElementById('photoPreview');
+          preview.src = uploadedPhotoDataUrl;
+          preview.style.display = 'block';
+          document.getElementById('photoPlaceholder').style.display = 'none';
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    function syncSigName(val) {
+      const sig = document.getElementById('digital_sig');
+      if (!sig.value || sig.value.startsWith('/s/')) {
+        sig.value = val ? '/s/ ' + val : '';
+      }
+    }
+
+    function populatePrintableData() {
+      // Populate fields from form
+      const name = document.getElementById('applicant_name').value || 'UNSPECIFIED CANDIDATE';
+      document.getElementById('p_name').textContent = name;
+      
+      const dept = document.querySelector('input[name="directorate"]:checked')?.value || 'Directorates 01-10';
+      document.getElementById('p_dept').textContent = dept;
+
+      const repos = document.getElementById('repo_urls').value || 'None Disclosed';
+      document.getElementById('p_repos').textContent = repos;
+
+      document.getElementById('p_stability').textContent = document.getElementById('stability_answer').value || 'No response recorded.';
+      document.getElementById('p_artifact').textContent = document.getElementById('artifact_answer').value || 'No response recorded.';
+
+      const toolchains = Array.from(document.querySelectorAll('input[name="toolchain"]:checked')).map(c => c.value);
+      document.getElementById('p_toolchains').textContent = toolchains.length ? toolchains.join(' // ') : 'None specified.';
+
+      document.getElementById('p_ip').textContent = document.querySelector('input[name="ip_assign"]:checked')?.value || 'YES';
+      document.getElementById('p_nda').textContent = document.querySelector('input[name="nda_warrant"]:checked')?.value || 'YES';
+
+      document.getElementById('p_appointment').textContent = document.querySelector('input[name="appointment"]:checked')?.value || 'Resident Research Fellow';
+      document.getElementById('p_time').textContent = document.getElementById('time_commitment').value || 'Standard Mandate';
+      document.getElementById('p_referees').textContent = document.getElementById('referees').value || 'Referees on file.';
+
+      const sigName = document.getElementById('sig_name').value || name;
+      document.getElementById('p_sig_name_display').textContent = sigName;
+      document.getElementById('p_gov_id_display').textContent = document.getElementById('gov_id').value || 'PENDING VERIFICATION';
+      document.getElementById('p_email_display').textContent = document.getElementById('applicant_email').value || 'N/A';
+      document.getElementById('p_date_display').textContent = document.getElementById('app_date').value || new Date().toISOString().split('T')[0];
+      document.getElementById('p_sig_display').textContent = document.getElementById('digital_sig').value || ('/s/ ' + sigName);
+
+      // Photo
+      const printPhoto = document.getElementById('p_photo');
+      const photoNone = document.getElementById('p_photo_none');
+      if (uploadedPhotoDataUrl) {
+        printPhoto.src = uploadedPhotoDataUrl;
+        printPhoto.style.display = 'block';
+        photoNone.style.display = 'none';
+      } else {
+        printPhoto.style.display = 'none';
+        photoNone.style.display = 'block';
+      }
+    }
+
+    function generateAndPrint() {
+      const form = document.getElementById('fellowshipForm');
+      if (!form.reportValidity()) return;
+      populatePrintableData();
+      window.print();
+    }
+
+    function generateAndDownload() {
+      generateAndPrint();
+    }
+  </script>
+
+</body>
+</html>

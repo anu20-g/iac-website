@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 230" width="100%" height="100%" style="background:#050505; border:1px solid #333333; display:block;">
+  <defs>
+    <pattern id="igrid" width="15" height="15" patternUnits="userSpaceOnUse">
+      <path d="M 15 0 L 0 0 0 15" fill="none" stroke="#0e0e0e" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#igrid)"/>
+  <rect x="0" y="0" width="420" height="24" fill="#0d0d0d" stroke="#222222" stroke-width="1"/>
+  <text x="10" y="16" fill="#888888" font-family="'Roboto Mono', monospace" font-size="8.5" letter-spacing="1">FIG 02C // IDM (APPLIED) PRE-GEOMETRIC COMPUTE</text>
+
+  <!-- Lattice Graph Graphic -->
+  <rect x="15" y="38" width="185" height="175" fill="#000000" stroke="#333333" stroke-width="1"/>
+  <text x="23" y="54" fill="#888888" font-family="'Roboto Mono', monospace" font-size="7.5">EMERGENT STATE LATTICE</text>
+  
+  <!-- Node matrix -->
+  <circle cx="45" cy="80" r="3" fill="#F5F5DC"/>
+  <circle cx="95" cy="75" r="4" fill="#F5F5DC"/>
+  <circle cx="155" cy="85" r="3" fill="#F5F5DC"/>
+  <circle cx="65" cy="120" r="4" fill="#F5F5DC"/>
+  <circle cx="120" cy="115" r="5" fill="#F5F5DC"/>
+  <circle cx="170" cy="125" r="3" fill="#F5F5DC"/>
+  <circle cx="45" cy="165" r="3" fill="#F5F5DC"/>
+  <circle cx="105" cy="160" r="4" fill="#F5F5DC"/>
+  <circle cx="155" cy="170" r="3" fill="#F5F5DC"/>
+
+  <line x1="45" y1="80" x2="95" y2="75" stroke="#444444" stroke-width="1"/>
+  <line x1="95" y1="75" x2="155" y2="85" stroke="#444444" stroke-width="1"/>
+  <line x1="45" y1="80" x2="65" y2="120" stroke="#444444" stroke-width="1"/>
+  <line x1="95" y1="75" x2="120" y2="115" stroke="#F5F5DC" stroke-width="1.5"/>
+  <line x1="155" y1="85" x2="170" y2="125" stroke="#444444" stroke-width="1"/>
+  <line x1="65" y1="120" x2="120" y2="115" stroke="#F5F5DC" stroke-width="1.5"/>
+  <line x1="120" y1="115" x2="170" y2="125" stroke="#444444" stroke-width="1"/>
+  <line x1="65" y1="120" x2="45" y2="165" stroke="#444444" stroke-width="1"/>
+  <line x1="120" y1="115" x2="105" y2="160" stroke="#F5F5DC" stroke-width="1.5"/>
+  <line x1="170" y1="125" x2="155" y2="170" stroke="#444444" stroke-width="1"/>
+  <line x1="45" y1="165" x2="105" y2="160" stroke="#444444" stroke-width="1"/>
+  <line x1="105" y1="160" x2="155" y2="170" stroke="#444444" stroke-width="1"/>
+
+  <text x="23" y="196" fill="#F5F5DC" font-family="'Roboto Mono', monospace" font-size="7">D-OPERATOR DISTURBANCE: STABLE</text>
+
+  <!-- Description Panel -->
+  <rect x="210" y="38" width="195" height="175" fill="#000000" stroke="#333333" stroke-width="1"/>
+  <text x="220" y="54" fill="#F5F5DC" font-family="'Roboto Mono', monospace" font-size="8" font-weight="bold">COMPUTATIONAL SCOPE</text>
+  <line x1="220" y1="60" x2="395" y2="60" stroke="#222222" stroke-width="1"/>
+
+  <text x="220" y="80" fill="#AAAAAA" font-family="'Roboto Mono', monospace" font-size="7.5">01. Pre-Geometric Calculus</text>
+  <text x="228" y="94" fill="#666666" font-family="'Roboto Mono', monospace" font-size="7">Discrete optimal transport</text>
+
+  <text x="220" y="114" fill="#AAAAAA" font-family="'Roboto Mono', monospace" font-size="7.5">02. Spacetime Emergence</text>
+  <text x="228" y="128" fill="#666666" font-family="'Roboto Mono', monospace" font-size="7">Mathematical field modeling</text>
+
+  <text x="220" y="148" fill="#AAAAAA" font-family="'Roboto Mono', monospace" font-size="7.5">03. Advanced Simulations</text>
+  <text x="228" y="162" fill="#666666" font-family="'Roboto Mono', monospace" font-size="7">Non-standard compute matrices</text>
+
+  <rect x="220" y="176" width="175" height="26" fill="#0d0d0d" stroke="#222222" stroke-width="1"/>
+  <text x="226" y="193" fill="#CCCCCC" font-family="'Roboto Mono', monospace" font-size="7.2" font-weight="bold">FIELD-OF-USE RESTRICTED</text>
+</svg>

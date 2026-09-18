@@ -1,0 +1,1138 @@
+/* INTELLECTUAL ASSET CORPORATION (IAC) - SYSTEM STYLESHEET */
+/* STRICT SPECIFICATION: ZERO GRADIENTS, ZERO DROP SHADOWS, ZERO ANIMATIONS, ZERO CURVED EDGES */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap');
+
+:root {
+  --color-bg: #000000;
+  --color-surface: #050505;
+  --color-surface-elevated: #0a0a0a;
+  --color-text: #F5F5DC;
+  --color-muted: #888888;
+  --color-border: #F5F5DC;
+  --color-border-dim: #444444;
+  --color-border-subtle: #222222;
+  --color-divider: #F5F5DC;
+  --font-stack: 'Roboto Mono', 'Courier New', Courier, monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  transition: none !important;
+  animation: none !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-stack);
+  font-size: 14px;
+  line-height: 1.55;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  cursor: default;
+  min-height: 100vh;
+  text-align: left;
+  padding: 1.25rem 0;
+}
+
+/* WIDE TERMINAL CONTAINER: ENCLOSED BY A RIGID STATUTORY DOSSIER BORDER */
+.terminal-container {
+  width: 96%;
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 2rem clamp(1.25rem, 2.5vw, 3rem) 4rem clamp(1.25rem, 2.5vw, 3rem);
+  text-align: left;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  outline: 4px solid #080808;
+  position: relative;
+}
+
+/* SCREEN-BASED NAVIGATION ARCHITECTURE */
+.screen-view {
+  display: none;
+  width: 100%;
+}
+
+.screen-view.active {
+  display: block;
+}
+
+.screen-view:target {
+  display: block;
+}
+
+.menu-item.active {
+  background-color: var(--color-border);
+  color: #000000;
+  border-color: var(--color-border);
+}
+
+.menu-item.active .menu-num {
+  color: #000000;
+}
+
+/* HEADER BAR & TOP ROW */
+.header-bar {
+  margin-bottom: 2rem;
+  text-align: left;
+  border-bottom: 2px solid var(--color-divider);
+  padding-bottom: 1.25rem;
+}
+
+.header-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.brand-logo {
+  display: block;
+  max-width: 380px;
+  height: auto;
+}
+
+.header-right-meta {
+  text-align: right;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
+
+.meta-dossier-id {
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.meta-authority {
+  color: var(--color-muted);
+  font-size: 0.72rem;
+}
+
+/* INSTITUTIONAL MENU OPTIONS (PROPER NAVIGATION) */
+.terminal-menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid var(--color-border-dim);
+  padding-top: 1rem;
+}
+
+.menu-item {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--color-border-dim);
+  background-color: var(--color-surface);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  user-select: none;
+}
+
+.menu-item .menu-num {
+  color: var(--color-muted);
+  font-size: 0.7rem;
+}
+
+.menu-item:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-border);
+}
+
+.menu-item:hover .menu-num {
+  color: var(--color-bg);
+}
+
+.menu-item-legal {
+  margin-left: auto;
+  border-color: var(--color-border-dim);
+  color: #cccccc;
+}
+
+.menu-item-legal:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* SECTION DIVIDERS: 2PX SOLID CREAM */
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-divider);
+  margin: 2.25rem 0;
+}
+
+.sub-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border-dim);
+  margin: 1.5rem 0;
+}
+
+/* SECTIONS */
+.section {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.meta-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-muted);
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+/* HEADINGS: ALL-CAPS, FLUSH-LEFT */
+.main-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.sub-header {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+/* DOSSIER PANELS & CARDS WITH STRICT BORDERS */
+.dossier-card {
+  border: 1px solid var(--color-border-dim);
+  background-color: var(--color-surface);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.dossier-card-header {
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* GRID LAYOUTS FOR WIDE SCREENS */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+/* SCHEMATIC & TECHNICAL FIGURE FRAMES */
+.schematic-frame {
+  border: 1px solid var(--color-border-dim);
+  background-color: var(--color-surface);
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.schematic-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.schematic-card {
+  border: 1px solid var(--color-border-dim);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+}
+
+.schematic-card .schematic-img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--color-border-dim);
+}
+
+.schematic-card-desc {
+  padding: 0.85rem 1rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #aaaaaa;
+}
+
+.schematic-card-desc strong {
+  color: var(--color-text);
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+/* ENTITY SPECIFICATION BLOCK */
+.entity-spec {
+  border: 1px solid var(--color-border-dim);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  background-color: #030303;
+}
+
+.spec-row {
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.spec-label {
+  font-weight: 700;
+  color: var(--color-text);
+  margin-right: 0.5rem;
+}
+
+/* TYPOGRAPHY */
+p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 0.85rem;
+  text-align: left;
+}
+
+/* TABLE: ACTIVE ASSET LEDGER */
+.ledger-preamble {
+  margin-bottom: 1.25rem;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 2px solid var(--color-divider);
+  margin-bottom: 1.5rem;
+  background-color: var(--color-surface);
+}
+
+.ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.ledger-table th,
+.ledger-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border-dim);
+  border-right: 1px solid var(--color-border-dim);
+  vertical-align: top;
+  text-align: left;
+}
+
+.ledger-table th:last-child,
+.ledger-table td:last-child {
+  border-right: none;
+}
+
+.ledger-table th {
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--color-divider);
+}
+
+.ledger-table tbody tr:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.ledger-table tbody tr:hover td {
+  color: var(--color-bg);
+}
+
+.ledger-table tbody tr:hover strong {
+  color: #000000;
+}
+
+.ledger-table tbody tr:hover .status-badge {
+  border-color: var(--color-bg);
+  color: var(--color-bg);
+}
+
+.asset-name {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--color-border);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.status-badge.restricted {
+  border-color: #bb2222;
+  color: #ff5555;
+}
+
+.ledger-table tbody tr:hover .status-badge.restricted {
+  border-color: #000000;
+  color: #000000;
+}
+
+.status-detail {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+.ledger-table tbody tr:hover .status-detail {
+  color: #222222;
+}
+
+.compliance-note {
+  border: 1px solid var(--color-border-dim);
+  background-color: var(--color-surface);
+  padding: 1.15rem 1.35rem;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #cccccc;
+  margin-top: 1rem;
+  margin-bottom: 1.75rem;
+  border-left: 3px solid var(--color-border);
+}
+
+.compliance-note strong {
+  color: var(--color-text);
+}
+
+/* PROTOCOL STEPS */
+.protocol-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.protocol-step {
+  border: 1px solid var(--color-border-dim);
+  padding: 1.25rem;
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+}
+
+.step-num {
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: 0.35rem;
+}
+
+.step-content {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+/* COMMUNICATIONS DIRECTORY */
+.comm-preamble {
+  margin-bottom: 1.25rem;
+}
+
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.channel-card {
+  padding: 1.25rem;
+  border: 1px solid var(--color-border-dim);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.channel-department {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.channel-link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.82rem;
+  border: 1px solid var(--color-border);
+  padding: 0.45rem 0.85rem;
+  background: transparent;
+  display: inline-block;
+  text-align: center;
+}
+
+.channel-link:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.status-restricted {
+  color: var(--color-muted);
+  border: 1px solid var(--color-border-dim);
+  letter-spacing: 0.05em;
+  font-size: 0.72rem;
+  user-select: none;
+  cursor: not-allowed;
+  padding: 0.45rem 0.65rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.status-restricted:hover {
+  background-color: transparent !important;
+  color: var(--color-muted) !important;
+}
+
+/* FOOTER (THE POISON PILL) */
+.site-footer {
+  text-align: left;
+  border-top: 2px solid var(--color-divider);
+  padding-top: 2rem;
+  margin-top: 2.5rem;
+}
+
+.footer-notice-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.poison-pill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  list-style: none;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #cccccc;
+  margin-bottom: 2rem;
+}
+
+.poison-pill-item {
+  border: 1px solid var(--color-border-dim);
+  border-left: 3px solid var(--color-border);
+  padding: 1rem 1.25rem;
+  background-color: var(--color-surface);
+}
+
+.poison-pill-item.full-span {
+  grid-column: span 2;
+}
+
+.poison-pill-item strong {
+  color: var(--color-text);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-dim);
+}
+
+.footer-nav-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  letter-spacing: 0.05em;
+}
+
+.legal-btn {
+  display: inline-block;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--color-border);
+  padding: 0.45rem 0.95rem;
+  background: transparent;
+}
+
+.legal-btn:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.copyright-text {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
+
+/* LEGAL PAGES SPECIFIC */
+.back-bar {
+  margin-bottom: 2rem;
+}
+
+.legal-article {
+  margin-bottom: 2rem;
+  border: 1px solid var(--color-border-dim);
+  background-color: var(--color-surface);
+  padding: 1.25rem 1.5rem;
+}
+
+.legal-article h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: 0.35rem;
+}
+
+
+/* ==========================================================================
+   SOVEREIGN IP PORTFOLIO REGISTER STYLES (265 PATENTS)
+   ========================================================================== */
+
+.portfolio-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.metric-card {
+  border: 1px solid var(--color-border-dim);
+  background-color: var(--color-surface);
+  padding: 1.25rem 1rem;
+  text-align: left;
+}
+
+.metric-val {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.metric-lbl {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cluster-nav-wrapper {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cluster-nav-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  letter-spacing: 0.08em;
+}
+
+.cluster-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.cluster-nav-btn {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--color-border-dim);
+  background-color: var(--color-surface);
+  user-select: none;
+}
+
+.cluster-nav-btn:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-border);
+}
+
+.cluster-section {
+  margin-bottom: 3.5rem;
+  scroll-margin-top: 2rem;
+}
+
+.cluster-header-box {
+  border-left: 3px solid var(--color-border);
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cluster-meta-tag {
+  font-size: 0.7rem;
+  color: var(--color-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+
+.cluster-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.cluster-theme {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-bottom: 0.35rem;
+}
+
+.cluster-count {
+  font-size: 0.74rem;
+  color: var(--color-text);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.patent-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.patent-card {
+  border: 1px solid var(--color-border-dim);
+  background-color: var(--color-surface);
+  padding: 1.25rem;
+}
+
+.patent-card:hover {
+  border-color: var(--color-border);
+}
+
+.patent-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.patent-id-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.patent-id {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text);
+  background-color: #111111;
+  border: 1px solid var(--color-border-dim);
+  padding: 0.2rem 0.5rem;
+}
+
+.patent-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+
+.patent-status-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-filed {
+  background-color: var(--color-border) !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+.filed-ref-badge {
+  font-size: 0.72rem;
+  color: var(--color-text);
+  border: 1px solid var(--color-border-dim);
+  padding: 0.2rem 0.4rem;
+  background-color: #0d0d0d;
+}
+
+.status-in-progress {
+  background-color: transparent !important;
+  color: var(--color-muted) !important;
+  border: 1px solid var(--color-border-dim) !important;
+}
+
+.patent-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.patent-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.patent-row-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.25rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.p-label {
+  font-weight: 700;
+  color: var(--color-muted);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.p-val {
+  color: #cccccc;
+}
+
+/* RESPONSIVE BREAKPOINT ONLY FOR MOBILE / SMALL TABLETS (UNDER 768px) */
+@media (max-width: 768px) {
+  .terminal-container {
+    width: 98%;
+    padding: 1.5rem 1rem 3rem 1rem;
+    outline: none;
+  }
+
+  .header-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header-right-meta {
+    text-align: left;
+  }
+  .terminal-menu {
+    gap: 0.35rem;
+  }
+  .menu-item {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.6rem;
+  }
+  .menu-item-legal {
+    margin-left: 0;
+  }
+  .grid-2col {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .grid-3col {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .protocol-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .channel-grid {
+    grid-template-columns: 1fr;
+  }
+  .poison-pill-grid {
+    grid-template-columns: 1fr;
+  }
+  .poison-pill-item.full-span {
+    grid-column: span 1;
+  }
+  .main-title {
+    font-size: 1.45rem;
+  }
+  .brand-logo {
+    max-width: 260px;
+  }
+  .portfolio-metrics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .patent-row-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   DEPARTMENT SELECTOR & HEADERS (MULTI-DEPARTMENT ARCHITECTURE)
+   ========================================================================== */
+.dept-selector-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 2rem;
+  padding: 1.25rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.dept-selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: 0.6rem;
+}
+
+.dept-selector-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.08em;
+}
+
+.dept-selector-sub {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  letter-spacing: 0.05em;
+}
+
+.dept-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+@media (max-width: 1100px) {
+  .dept-nav-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dept-nav-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dept-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--color-border-dim);
+  background-color: #111111;
+  letter-spacing: 0.03em;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.dept-nav-btn:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-border);
+}
+
+.dept-nav-btn:hover .dept-btn-num {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border-color: var(--color-bg);
+}
+
+.dept-nav-btn:hover .dept-btn-count {
+  border-color: var(--color-bg);
+  color: var(--color-bg);
+}
+
+.dept-btn-num {
+  font-size: 0.7rem;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 0.15rem 0.35rem;
+  border: 1px solid var(--color-border-dim);
+  white-space: nowrap;
+}
+
+.dept-btn-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dept-btn-count {
+  font-size: 0.7rem;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border-subtle);
+  padding: 0.1rem 0.35rem;
+  white-space: nowrap;
+}
+
+.department-wrapper {
+  margin-bottom: 4rem;
+  scroll-margin-top: 2rem;
+}
+
+.department-header-banner {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dept-super-tag {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+
+.department-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.department-desc {
+  font-size: 0.85rem;
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.department-meta-line {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  letter-spacing: 0.05em;
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 0.75rem;
+}
+
+.dept-nav-btn.active {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-border);
+  color: #000000;
+  font-weight: 700;
+}
+
+.dept-nav-btn.active .dept-btn-num {
+  background-color: #000000;
+  color: var(--color-border);
+  font-weight: 700;
+  border-color: #000000;
+}
+
+.dept-nav-btn.active .dept-btn-text {
+  color: #000000;
+}
+
+.dept-nav-btn.active .dept-btn-count {
+  border-color: #000000;
+  color: #000000;
+  font-weight: 700;
+}
+
+.cluster-nav-btn {
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.cluster-nav-btn.active {
+  background-color: var(--color-border) !important;
+  color: #000000 !important;
+  border-color: var(--color-border) !important;
+}
+
+.cluster-nav-btn.active .btn-num {
+  font-weight: 700;
+}
+
