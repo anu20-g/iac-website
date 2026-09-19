@@ -77,6 +77,21 @@
       color: #000000;
       border-color: #FFFFFF;
     }
+    .dispatch-toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #111111;
+      border: 1px solid #F5F5DC;
+      color: #F5F5DC;
+      padding: 1rem 1.5rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      z-index: 10000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+      display: none;
+    }
     .form-card {
       background: #0A0A0A;
       border: 1px solid #262626;
@@ -360,14 +375,14 @@
         <a href="iac_compliance_audit_form.pdf" class="action-btn" download>
           DOWNLOAD SAMPLE WATERMARKED PDF
         </a>
-        <button type="button" class="action-btn primary" onclick="generateAndPrint()">
+        <button type="button" class="action-btn primary" onclick="submitAndProcessAudit()">
           PRINT / SAVE AS PDF
         </button>
       </div>
     </div>
 
     <!-- FORM ENTRY CARD -->
-    <form id="complianceForm" onsubmit="event.preventDefault(); generateAndPrint();" class="form-card">
+    <form id="complianceForm" onsubmit="event.preventDefault(); submitAndProcessAudit();" class="form-card">
 
       <div class="form-header-bar">
         <div>
@@ -780,15 +795,91 @@
       document.getElementById('p_audit_sig_display').textContent = document.getElementById('audit_sig').value || (`/s/ ${sigName}`);
     }
 
-    function generateAndPrint() {
+    function showTransmissionToast(msg) {
+      let toast = document.getElementById('dispatchToast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'dispatchToast';
+        toast.className = 'dispatch-toast';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 5000);
+    }
+
+    function submitAndProcessAudit() {
       const form = document.getElementById('complianceForm');
       if (!form.reportValidity()) return;
       populateAuditPrintableData();
-      window.print();
+
+      showTransmissionToast('TRANSMITTING STATUTORY FILING TO IAC EXECUTIVE LEDGER...');
+
+      const payload = {
+        _subject: `IAC FORM CA-01 SUBMISSION: ${document.getElementById('corp_name').value || 'Corporate Entity'}`,
+        _template: 'table',
+        _captcha: 'false',
+        form_id: 'IAC-FORM-CA-01',
+        timestamp_utc: new Date().toISOString(),
+        legal_entity_name: document.getElementById('corp_name').value || '',
+        jurisdiction_reg: document.getElementById('corp_jurisdiction').value || '',
+        ultimate_beneficial_owners: document.getElementById('corp_ownership').value || '',
+        change_of_control_consent: document.querySelector('input[name="change_control"]:checked')?.value || '',
+        target_asset: document.querySelector('input[name="target_asset"]:checked')?.value || '',
+        commercial_scope_and_runtime: document.getElementById('commercial_scope').value || '',
+        restricted_sectors_certification: document.querySelector('input[name="restricted_sector"]:checked')?.value || '',
+        derivative_architecture: document.getElementById('derivative_arch').value || '',
+        grant_back_covenant: document.querySelector('input[name="grant_back"]:checked')?.value || '',
+        anti_reverse_engineering_controls: document.getElementById('reverse_eng').value || '',
+        access_control_departments: document.getElementById('access_control').value || '',
+        subcontractor_prohibition: document.getElementById('subcon_ack').checked ? 'CERTIFIED' : 'NOT CERTIFIED',
+        audit_consent: document.querySelector('input[name="audit_consent"]:checked')?.value || '',
+        signatory_name: document.getElementById('signatory_name').value || '',
+        executive_title: document.getElementById('exec_title').value || '',
+        corporate_reg_lei: document.getElementById('corp_reg_num').value || '',
+        date_of_execution: document.getElementById('exec_date').value || '',
+        digital_signature: document.getElementById('audit_sig').value || ''
+      };
+
+      try {
+        const existing = JSON.parse(localStorage.getItem('iac_ca01_submissions') || '[]');
+        existing.push(payload);
+        localStorage.setItem('iac_ca01_submissions', JSON.stringify(existing));
+      } catch (e) {
+        console.warn('LocalStorage backup error:', e);
+      }
+
+      fetch('https://formsubmit.co/ajax/at3506671@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(res => res.json())
+      .then(data => {
+        showTransmissionToast('STATUTORY FILING TRANSMITTED TO IAC ARCHIVE // LAUNCHING PRINT ENGINE...');
+      })
+      .catch(err => {
+        console.warn('Transmission fallback:', err);
+        showTransmissionToast('LOCAL COPY COMPILED // LAUNCHING PRINT ENGINE...');
+      })
+      .finally(() => {
+        setTimeout(() => {
+          window.print();
+        }, 800);
+      });
+    }
+
+    function generateAndPrint() {
+      submitAndProcessAudit();
     }
 
     function generateAndDownload() {
-      generateAndPrint();
+      submitAndProcessAudit();
     }
   </script>
 
