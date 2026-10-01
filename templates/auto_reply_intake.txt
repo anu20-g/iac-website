@@ -1,13 +1,13 @@
 Subject: Auto-Reply: Licensing Intake & Compliance Audit Initiation
 
-This is an automated communication from the Office of Licensing & Procurement at Intellectual Asset Corporation (IAC).
+This is an automated communication from the Office of Licensing & Procurement at TRDL Intellectual Asset Corporation (TRDL-IAC).
 
 Your inquiry regarding the commercial sub-licensing of Tewary Research and Development Lab (TRDL) foundational architectures has been received. IAC does not engage in open-market software distribution, nor do we entertain preliminary exploratory meetings without formal corporate verification.
 
 Mandatory Procurement Protocol
 Prior to any commercial negotiation, technical disclosure, or asset deployment, all prospective enterprise partners must clear a strict legal and operational review.
 
-* The Compliance Audit: Attached to this email is the official IAC Commercial Sub-License Application & Compliance Audit document (Form CA-FORM-01).
+* The Compliance Audit: Attached to this email is the official TRDL-IAC Commercial Sub-License Application & Compliance Audit document (Form CA-FORM-01).
 * Required Authorization: This document must be completed in full and legally executed by your organization's Chief Technology Officer (CTO) or Chief Legal Officer (CLO).
 * Submission Format: Return the completed and signed document to this email address strictly as a single, secured PDF file.
 
@@ -17,5 +17,5 @@ Please be advised that all distributed technologies - including VORASHI, GIOS, a
 Upon receipt of your completed audit, our compliance division will review your corporate entity framework and proposed field-of-use. If the audit is cleared, you will be assigned a designated procurement officer to initiate the sub-licensing negotiations.
 
 Office of Licensing & Procurement
-Intellectual Asset Corporation (IAC)
+TRDL Intellectual Asset Corporation (TRDL-IAC)
 Jurisdiction: India

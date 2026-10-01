@@ -1,14 +1,14 @@
-# INTELLECTUAL ASSET CORPORATION (IAC)
+# TRDL INTELLECTUAL ASSET CORPORATION (TRDL-IAC)
 ### Commercial Distribution & Licensing Enforcement Vehicle for Tewary Research and Development Lab (TRDL)
 
 **Jurisdiction**: New Delhi, India  
-**Corporate Registry Ref**: `IAC-IND-2024-CORP`  
+**Corporate Registry Ref**: `TRDL-IAC-IND-2024-CORP`  
 **Master IP Portfolio Ref**: `TRDL-IPR-PORTFOLIO-2026`  
 
 ---
 
 ## Overview
-Intellectual Asset Corporation (IAC) operates as the exclusive commercial sub-licensing, intellectual property repository, and contract enforcement vehicle for foundational technologies engineered by **Tewary Research and Development Lab (TRDL)**.
+TRDL Intellectual Asset Corporation (TRDL-IAC) operates as the exclusive commercial sub-licensing, intellectual property repository, and contract enforcement vehicle for foundational technologies engineered by **Tewary Research and Development Lab (TRDL)**.
 
 The sovereign portfolio comprises **286 Inventions** structured across **13 Specialized Scientific & Engineering Departments**, encompassing over **$3.1+ Trillion USD** in Total Addressable Market (TAM):
 - **DEPT 01**: Next-Gen Silicon, Microprocessors & Compute Fabrics (PAT-001 to PAT-030)
@@ -31,7 +31,7 @@ Lead Patent:
 ---
 
 ## Interactive Statutory Instruments
-- **IAC Form CA-01**: Statutory Compliance Audit & Licensing Intake Portal (`documents/iac_compliance_audit_form.html`)
+- **TRDL-IAC Form CA-01**: Statutory Compliance Audit & Licensing Intake Portal (`documents/iac_compliance_audit_form.html`)
   - Form CA-01 Watermarked Sample Specimen (`documents/iac_compliance_audit_form.pdf`)
 - **TRDL-IAC Form RF-01**: Advanced Research Fellowship & Scientific Recruiting Dossier (`documents/trdl_iac_recruiting_form.html`)
   - Form RF-01 Watermarked Sample Specimen (`documents/trdl_iac_recruiting_form.pdf`)
